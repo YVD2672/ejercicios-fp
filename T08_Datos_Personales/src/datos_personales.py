@@ -24,3 +24,22 @@ def obtiene_edades_distintas2(personas: list[Persona]) -> list[Persona]:
         edades |= (1 << (i.edad))
 
     return edades.bit_count()
+
+def calculasumaedades(personas:list[Persona])->int:
+    res=0
+    for i in personas:
+        res=res+i.edad
+    return res
+
+
+def calculapromedioedades(personas:list[Persona],prov:str='SEVILLA')->float:
+    res=None
+    suma=0
+    contador=0
+    for persona in personas:
+        if persona.provincia==prov:
+            suma+=persona.edad
+            contador+=1
+        if contador>0:
+            res=suma/contador
+    return res

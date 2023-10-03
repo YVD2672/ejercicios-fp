@@ -4,6 +4,8 @@ from datos_personales import (
     obtener_nombre_y_dni,
     obtiene_edades_distintas,
     obtiene_edades_distintas2,
+    calculasumaedades,
+    calculapromedioedades,
 )
 
 personas = [
@@ -18,10 +20,20 @@ personas = [
 ]
 EDAD = ...
 
+def test_calculasumaedades(personas:list[Persona]):
+    print("\nla suma de las edades es:",
+        calculasumaedades(personas))   
+    
+def test_calculapromedioedades(personas:list[Persona]):
+    print('Edades de Jaén: ',calculapromedioedades(personas,'JAEN'))
+    print('Edades de Cádiz: ',calculapromedioedades(personas,'CADIZ'))
+    print('Edades de Sevilla: ',calculapromedioedades(personas))
 
 def main() -> None:
-    print(obtiene_edades_distintas(personas))
-    print(obtiene_edades_distintas2(personas))
+    #print(obtiene_edades_distintas(personas))
+    #print(obtiene_edades_distintas2(personas))
+    #print(test_calculasumaedades(personas))
+    print(test_calculapromedioedades(personas))
 
 
 if __name__ == "__main__":
